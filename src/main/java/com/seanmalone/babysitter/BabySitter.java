@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 public class BabySitter {
     private int startTime = 0, endTime = 0;
     private String family;
+    private final int fivePM = 17, ninePM = 21, tenPM = 22, elevenPM = 23, midnight= 24;
 
     public static void main(String[] args) {
     }
@@ -26,7 +27,7 @@ public class BabySitter {
 
     public int convertInputTime(String inputTime) throws ParseException {
         DateFormat time_to_date = new SimpleDateFormat("hh:mm aa");
-        int milliseconds = 1000, seconds = 60, minutes = 60, errorCorrectionValue = 5, fourAM = 4, conversionStorageTime;
+        int milliseconds = 1000, seconds = 60, minutes = 60, errorCorrectionValue = 5, fourAMBeforeConversion = 4, conversionStorageTime;
 
         try {
             //Converting input String to Date format
@@ -39,7 +40,7 @@ public class BabySitter {
 
             /*if the time registers as after midnight it will be add to 24
             to more easily calculate total hours worked*/
-            if (conversionStorageTime < fourAM) {
+            if (conversionStorageTime < fourAMBeforeConversion) {
                 conversionStorageTime += 24;
             }
         } catch (ParseException e) {
@@ -48,4 +49,12 @@ public class BabySitter {
         return conversionStorageTime;
     }
 
+    public int setStartTime(String scannerStartTime) throws ParseException {
+       /*  if the validateInputTime function returns true it will assign
+        the returned value to the endTime variable*/
+        if ((validateInputTime(convertInputTime(scannerStartTime)))) {
+            startTime = convertInputTime(scannerStartTime);
+        }
+        return startTime;
+    }
 }
