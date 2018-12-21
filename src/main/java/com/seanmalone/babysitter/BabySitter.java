@@ -8,9 +8,9 @@ import java.text.SimpleDateFormat;
 
 
 public class BabySitter {
+    private final int fivePM = 17, ninePM = 21, tenPM = 22, elevenPM = 23, midnight = 24;
     private int startTime = 0, endTime = 0;
     private String family;
-    private final int fivePM = 17, ninePM = 21, tenPM = 22, elevenPM = 23, midnight= 24;
 
     public static void main(String[] args) {
     }
@@ -56,5 +56,15 @@ public class BabySitter {
             startTime = convertInputTime(scannerStartTime);
         }
         return startTime;
+    }
+
+    public int setEndTime(String scannerEndTime) throws ParseException {
+
+        /*if the validateInputTime function returns true it will assign
+        the returned value to the endTime variable*/
+        if ((validateInputTime(convertInputTime(scannerEndTime)))) {
+            endTime = convertInputTime(scannerEndTime);
+        }
+        return endTime;
     }
 }

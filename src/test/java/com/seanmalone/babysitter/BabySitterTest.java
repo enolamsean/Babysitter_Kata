@@ -39,6 +39,10 @@ public class BabySitterTest {
     public void settingStartTimeVariableandValidatingStringInput() throws ParseException {
         assertEquals(17, babySitterTestObject.setStartTime("5:00 pm"));
     }
+    @Test
+    public void settingEndTimeVariableandValidatingStringInput() throws ParseException {
+        assertEquals(27, babySitterTestObject.setEndTime("3:00 am"));
+    }
       /*@After
     public void tearDown() throws Exception {
     }*/
