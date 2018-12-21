@@ -19,6 +19,21 @@ public class BabySitterTest {
     public void validateInputStartTime() {
         assertTrue(babySitterTestObject.validateInputTime(17));
     }
+
+    @Test
+    public void errorHandlingTimeInputConversion() throws ParseException {
+        assertEquals(0, babySitterTestObject.convertInputTime("6:00"));
+    }
+
+    @Test
+    public void convertPMStartTimeToTwentyFourHourFormat() throws ParseException {
+        assertEquals(18, babySitterTestObject.convertInputTime("6:00 pm"));
+    }
+
+    @Test
+    public void convertAMEndTimeToTwentFourHourFormat() throws ParseException {
+        assertEquals(27, babySitterTestObject.convertInputTime("3:00 am"));
+    }
       /*@After
     public void tearDown() throws Exception {
     }*/
