@@ -67,4 +67,14 @@ public class BabySitter {
         }
         return endTime;
     }
+
+    public boolean validateFamily(String validateFamily) {
+        boolean validFamily = true;
+        if (validateFamily.equalsIgnoreCase("A") ||
+                validateFamily.equalsIgnoreCase("B") ||
+                validateFamily.equalsIgnoreCase("C")) {
+            return validFamily;
+        }
+        return !validFamily;
+    }
 }

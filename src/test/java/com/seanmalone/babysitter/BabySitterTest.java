@@ -4,7 +4,9 @@ import org.junit.After;
 
 import org.junit.Before;
 import org.junit.Test;
+
 import java.text.ParseException;
+
 import static org.junit.Assert.*;
 
 public class BabySitterTest {
@@ -39,9 +41,25 @@ public class BabySitterTest {
     public void settingStartTimeVariableandValidatingStringInput() throws ParseException {
         assertEquals(17, babySitterTestObject.setStartTime("5:00 pm"));
     }
+
     @Test
     public void settingEndTimeVariableandValidatingStringInput() throws ParseException {
         assertEquals(27, babySitterTestObject.setEndTime("3:00 am"));
+    }
+
+    @Test
+    public void validatingFamilyIfAShouldReturnTrue() {
+        assertTrue(babySitterTestObject.validateFamily("a"));
+    }
+
+    @Test
+    public void validatingFamilyIfBShouldReturnTrue() {
+        assertTrue(babySitterTestObject.validateFamily("b"));
+    }
+
+    @Test
+    public void validatingFamilyIfCShouldReturnTrue() {
+        assertTrue(babySitterTestObject.validateFamily("C"));
     }
       /*@After
     public void tearDown() throws Exception {
