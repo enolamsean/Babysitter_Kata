@@ -110,10 +110,12 @@ public class BabySitter {
 
         //Family B pays $12 per hour before 10pm, $8 between 10 and 12, and $16 the rest of the night
 
-        int familyBHourlyRateAfterFivePM = 12, familyBHourlyRateAfterTenPM = 8, familyBHourlyRateAfterMidnight = 20, pay =0 ;
+        int familyBHourlyRateAfterFivePM = 12, familyBHourlyRateAfterTenPM = 8, familyBHourlyRateAfterMidnight = 20, pay = 0;
         if (startTime < tenPM && endTime >= tenPM) {
-            if (endTime >= midnight)
-                pay = (((tenPM - startTime) * familyBHourlyRateAfterFivePM) + (familyBHourlyRateAfterTenPM * 2) +((endTime - midnight)*familyBHourlyRateAfterMidnight));
+            if (endTime > midnight) {
+                pay = (((tenPM - startTime) * familyBHourlyRateAfterFivePM) + (familyBHourlyRateAfterTenPM * (midnight - tenPM)) + ((endTime - midnight) * familyBHourlyRateAfterMidnight));
+            }
+            pay = (((tenPM - startTime) * familyBHourlyRateAfterFivePM) + ((midnight - endTime) * familyBHourlyRateAfterTenPM));
         }
         return pay;
     }

@@ -98,6 +98,12 @@ public class BabySitterTest {
         assertEquals(116, babySitterTestObject.familyBCalculation(17, 26));
     }
 
+    @Test
+
+    public void familyBCalculationStartTimeFivePMAndEndTimeElevenPMShouldReturn(){
+        assertEquals(68, babySitterTestObject.familyBCalculation(17, 23));
+    }
+
       /*@After
     public void tearDown() throws Exception {
     }*/
