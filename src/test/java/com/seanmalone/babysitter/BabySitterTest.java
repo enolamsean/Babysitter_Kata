@@ -109,8 +109,13 @@ public class BabySitterTest {
     }
 
     @Test
-    public void familyBCalculationStartTimeTenPMAndEndTimeThreAMMShouldReturnEight() {
+    public void familyBCalculationStartTimeTenPMAndEndTimeThreeAMMShouldReturnEight() {
         assertEquals(76, babySitterTestObject.familyBCalculation(22, 27));
+    }
+
+    @Test
+    public void familyBCalculationStartTimeMidnightAndEndTimeThreeAMMShouldReturnEight() {
+        assertEquals(60, babySitterTestObject.familyBCalculation(24, 27));
     }
 
 
