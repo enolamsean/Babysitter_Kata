@@ -118,9 +118,11 @@ public class BabySitter {
             }
         }
         if (startTime >= tenPM && endTime > tenPM) {
-            pay = (endTime - startTime) * familyBHourlyRateAfterTenPM;
-            if (endTime > midnight) {
-                pay = (((tenPM - startTime) * familyBHourlyRateAfterFivePM) + (familyBHourlyRateAfterTenPM * (midnight - tenPM)) + ((endTime - midnight) * familyBHourlyRateAfterMidnight));
+            if (startTime < midnight && endTime < midnight) {
+                pay = (endTime - startTime) * familyBHourlyRateAfterTenPM;
+            }
+            if (startTime < midnight && endTime > midnight) {
+                pay = (((midnight - startTime) * familyBHourlyRateAfterTenPM) + ((endTime - midnight) * familyBHourlyRateAfterMidnight));
             }
         }
         return pay;
