@@ -61,6 +61,21 @@ public class BabySitterTest {
     public void validatingFamilyIfCShouldReturnTrue() {
         assertTrue(babySitterTestObject.validateFamily("C"));
     }
+
+    @Test
+    public void validatingFamilyIfNotAorBorCShouldReturnFalse() {
+        assertFalse(babySitterTestObject.validateFamily("d"));
+    }
+
+    @Test
+    public void assigningFamilyVariableIsSetAfterValidation() {
+        assertEquals("A", babySitterTestObject.setFamily("A"));
+    }
+
+    @Test
+    public void ifValidateFamilyReturnsFalseShouldRecieveErrorMessage() {
+        assertEquals("Error", babySitterTestObject.setFamily("d"));
+    }
       /*@After
     public void tearDown() throws Exception {
     }*/

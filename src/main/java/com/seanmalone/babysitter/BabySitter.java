@@ -77,4 +77,17 @@ public class BabySitter {
         }
         return !validFamily;
     }
+
+    public String setFamily(String familyInput) {
+        if (validateFamily(familyInput)) {
+            family = familyInput;
+            return family;
+        } else {
+            return errorMessage();
+        }
+    }
+
+    public String errorMessage() {
+        return "Error";
+    }
 }
