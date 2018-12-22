@@ -90,4 +90,19 @@ public class BabySitter {
     public String errorMessage() {
         return "Error";
     }
+
+    public int familyACalulation(int startTime, int endTime) {
+        int familyAHourlyRateAfterFivePM = 15, familyAHourlyRateAfterElevenPM = 20, pay = 0;
+
+        /*Family A pays $15 per hour before 11pm, and $20 per hour the rest of the night
+        This If handles if  startTime is before 11pm and the endTime is after 11pm */
+        if (startTime < elevenPM && endTime >= elevenPM) {
+            pay = (((elevenPM - startTime) * familyAHourlyRateAfterFivePM) + ((endTime - elevenPM) * familyAHourlyRateAfterElevenPM));
+        } else if (startTime >= elevenPM && endTime > elevenPM) {
+            pay = ((endTime - startTime) * familyAHourlyRateAfterElevenPM);
+        } else {
+            pay = ((endTime - startTime) * familyAHourlyRateAfterFivePM);
+        }
+        return pay;
+    }
 }

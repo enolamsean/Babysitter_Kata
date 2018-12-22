@@ -76,6 +76,21 @@ public class BabySitterTest {
     public void ifValidateFamilyReturnsFalseShouldRecieveErrorMessage() {
         assertEquals("Error", babySitterTestObject.setFamily("d"));
     }
+
+    @Test
+    public void familyACalculationFivePMToTenPMShouldReturnSeventyFiveDollars() {
+        assertEquals(75, babySitterTestObject.familyACalulation(17, 22));
+    }
+
+    @Test
+    public void familyACalculationStartTimeFivePMAndEndTimeMidnightShouldReturnOneHunderedAndTen() {
+        assertEquals(110, babySitterTestObject.familyACalulation(17, 24));
+    }
+
+    @Test
+    public void familyACalculationStartTimeElevenPMAndEndTimeTwoAMShouldReturnSixty() {
+        assertEquals(60, babySitterTestObject.familyACalulation(23, 26));
+    }
       /*@After
     public void tearDown() throws Exception {
     }*/
