@@ -91,6 +91,13 @@ public class BabySitterTest {
     public void familyACalculationStartTimeElevenPMAndEndTimeTwoAMShouldReturnSixty() {
         assertEquals(60, babySitterTestObject.familyACalulation(23, 26));
     }
+
+    @Test
+
+    public void familyBCalculationStartTimeFivePMAndEndTimeTwoAMShouldReturnOneHunderedSixteen(){
+        assertEquals(116, babySitterTestObject.familyBCalculation(17, 26));
+    }
+
       /*@After
     public void tearDown() throws Exception {
     }*/
