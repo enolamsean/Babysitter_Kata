@@ -112,10 +112,16 @@ public class BabySitter {
 
         int familyBHourlyRateAfterFivePM = 12, familyBHourlyRateAfterTenPM = 8, familyBHourlyRateAfterMidnight = 20, pay = 0;
         if (startTime < tenPM && endTime >= tenPM) {
+            pay = (((tenPM - startTime) * familyBHourlyRateAfterFivePM) + ((midnight - endTime) * familyBHourlyRateAfterTenPM));
             if (endTime > midnight) {
                 pay = (((tenPM - startTime) * familyBHourlyRateAfterFivePM) + (familyBHourlyRateAfterTenPM * (midnight - tenPM)) + ((endTime - midnight) * familyBHourlyRateAfterMidnight));
             }
-            pay = (((tenPM - startTime) * familyBHourlyRateAfterFivePM) + ((midnight - endTime) * familyBHourlyRateAfterTenPM));
+        }
+        if (startTime >= tenPM && endTime > tenPM) {
+            pay = (endTime - startTime) * familyBHourlyRateAfterTenPM;
+            if (endTime > midnight) {
+                pay = (((tenPM - startTime) * familyBHourlyRateAfterFivePM) + (familyBHourlyRateAfterTenPM * (midnight - tenPM)) + ((endTime - midnight) * familyBHourlyRateAfterMidnight));
+            }
         }
         return pay;
     }
