@@ -128,4 +128,13 @@ public class BabySitter {
         }
         return pay;
     }
+
+    public int familyCCalculation(int startTime, int endTime) {
+        int familyBHourlyRateAfterFivePM = 21, familyBHourlyRateAfterNinePM = 15, pay = 0;
+
+        if (startTime < ninePM && endTime > ninePM) {
+            pay = (((ninePM - startTime) * familyBHourlyRateAfterFivePM) + ((endTime - ninePM) * familyBHourlyRateAfterNinePM));
+        }
+        return pay;
+    }
 }
