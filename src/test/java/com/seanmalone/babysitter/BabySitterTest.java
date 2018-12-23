@@ -127,6 +127,11 @@ public class BabySitterTest {
     public void familyCCalulationStartTimeNinePMEndTimeThreeAMShouldReturnNinety(){
         assertEquals(90, babySitterTestObject.familyCCalculation(21, 27));
     }
+
+    @Test
+    public void familyCCalulationStartTimeFivePMEndTimeNinePMShouldReturnEightyFour(){
+        assertEquals(84, babySitterTestObject.familyCCalculation(17, 21));
+    }
       /*@After
     public void tearDown() throws Exception {
     }*/

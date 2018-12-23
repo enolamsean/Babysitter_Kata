@@ -135,6 +135,8 @@ public class BabySitter {
             pay = (((ninePM - startTime) * familyBHourlyRateAfterFivePM) + ((endTime - ninePM) * familyBHourlyRateAfterNinePM));
         } else if (startTime >= ninePM && endTime > ninePM) {
             pay = ((endTime - startTime) * familyBHourlyRateAfterNinePM);
+        } else if (startTime < ninePM && endTime <= ninePM) {
+            pay = ((endTime - startTime) * familyBHourlyRateAfterFivePM);
         }
         return pay;
     }
