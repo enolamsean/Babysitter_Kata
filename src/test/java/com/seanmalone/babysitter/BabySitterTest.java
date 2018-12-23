@@ -94,8 +94,8 @@ public class BabySitterTest {
 
     @Test
 
-    public void familyBCalculationStartTimeFivePMAndEndTimeTwoAMShouldReturnOneHunderedSixteen() {
-        assertEquals(116, babySitterTestObject.familyBCalculation(17, 26));
+    public void familyBCalculationStartTimeFivePMAndEndTimeTwoAMShouldReturnOneHunderedAndEight() {
+        assertEquals(108, babySitterTestObject.familyBCalculation(17, 26));
     }
 
     @Test
@@ -109,13 +109,13 @@ public class BabySitterTest {
     }
 
     @Test
-    public void familyBCalculationStartTimeTenPMAndEndTimeThreeAMMShouldReturnEight() {
-        assertEquals(76, babySitterTestObject.familyBCalculation(22, 27));
+    public void familyBCalculationStartTimeTenPMAndEndTimeThreeAMMShouldReturnSixtyFour() {
+        assertEquals(64, babySitterTestObject.familyBCalculation(22, 27));
     }
 
     @Test
-    public void familyBCalculationStartTimeMidnightAndEndTimeThreeAMMShouldReturnEight() {
-        assertEquals(60, babySitterTestObject.familyBCalculation(24, 27));
+    public void familyBCalculationStartTimeMidnightAndEndTimeThreeAMMShouldReturnFortyEight() {
+        assertEquals(48, babySitterTestObject.familyBCalculation(24, 27));
     }
 
 
