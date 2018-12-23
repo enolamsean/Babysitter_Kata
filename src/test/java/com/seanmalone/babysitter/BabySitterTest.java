@@ -22,7 +22,7 @@ public class BabySitterTest {
     }
 
     @Test
-    public void errorHandlingTimeInputConversion() throws ParseException {
+    public void errorHandlingProperTimeInputFormatAndConversion() throws ParseException {
         assertEquals(0, babySitterTestObject.convertInputTime("6:00"));
     }
 
