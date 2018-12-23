@@ -1,29 +1,28 @@
 package com.seanmalone.babysitter;
 
 import java.text.ParseException;
-import java.util.*;
 import java.text.DateFormat;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
 
 public class BabySitter {
-    private final int fivePM = 17, ninePM = 21, tenPM = 22, elevenPM = 23, midnight = 24;
+    private final int fivePM = 17, ninePM = 21, tenPM = 22, elevenPM = 23, midnight = 24, fourAM = 28;
     private int startTime = 0, endTime = 0;
     private String family;
+    private final boolean validTime = true;
 
     public static void main(String[] args) {
     }
 
-    public boolean validateInputTime(int timeToValidate) {
-        int fourAMNextDay = 28, fivePMFirstDay = 17;
-        boolean validTime = true;
-        if ((timeToValidate >= fivePMFirstDay) && (timeToValidate <= fourAMNextDay)) {
+    public boolean validateInputTime(int timeToValidate){
+        if ((timeToValidate >= fivePM) &&(timeToValidate <= fourAM)){
             return validTime;
-        } else {
+        } else{
             return !validTime;
         }
     }
+
 
     public int convertInputTime(String inputTime) throws ParseException {
         DateFormat time_to_date = new SimpleDateFormat("hh:mm aa");
@@ -109,8 +108,9 @@ public class BabySitter {
     public int familyBCalculation(int startTime, int endTime) {
 
         //Family B pays $12 per hour before 10pm, $8 between 10 and 12, and $16 the rest of the night
-
         int familyBHourlyRateAfterFivePM = 12, familyBHourlyRateAfterTenPM = 8, familyBHourlyRateAfterMidnight = 16, pay = 0;
+
+        //if the startTime is prior to 10 and the endTime is set after 10
         if (startTime < tenPM && endTime >= tenPM) {
             pay = (((tenPM - startTime) * familyBHourlyRateAfterFivePM) + ((midnight - endTime) * familyBHourlyRateAfterTenPM));
             if (endTime > midnight) {
@@ -140,4 +140,13 @@ public class BabySitter {
         }
         return pay;
     }
+
+   public boolean validateEndInputTime(int startTime, int endTime) {
+        if (validateInputTime(endTime) && (startTime < endTime))
+        {
+            return validTime;
+        }
+        return !validTime;
+    }
+
 }

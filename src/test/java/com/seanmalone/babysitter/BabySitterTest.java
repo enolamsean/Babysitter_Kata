@@ -1,6 +1,5 @@
 package com.seanmalone.babysitter;
 
-import org.junit.After;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -119,21 +118,24 @@ public class BabySitterTest {
     }
 
     @Test
-    public void familyCCalulationStartTimeFivePMEndTimeTwoAMShouldReturnOneHundredFiftyNine(){
+    public void familyCCalulationStartTimeFivePMEndTimeTwoAMShouldReturnOneHundredFiftyNine() {
         assertEquals(159, babySitterTestObject.familyCCalculation(17, 26));
     }
 
     @Test
-    public void familyCCalulationStartTimeNinePMEndTimeThreeAMShouldReturnNinety(){
+    public void familyCCalulationStartTimeNinePMEndTimeThreeAMShouldReturnNinety() {
         assertEquals(90, babySitterTestObject.familyCCalculation(21, 27));
     }
 
     @Test
-    public void familyCCalulationStartTimeFivePMEndTimeNinePMShouldReturnEightyFour(){
+    public void familyCCalulationStartTimeFivePMEndTimeNinePMShouldReturnEightyFour() {
         assertEquals(84, babySitterTestObject.familyCCalculation(17, 21));
     }
-      /*@After
-    public void tearDown() throws Exception {
-    }*/
+
+    @Test
+    public void ifEndTimeIsBeforeStartTimeShouldReturnFalse() {
+    assertFalse(babySitterTestObject.validateEndInputTime(21, 17));
+    }
+
 }
 
