@@ -101,12 +101,16 @@ public class BabySitter {
         int familyAHourlyRateAfterFivePM = 15, familyAHourlyRateAfterElevenPM = 20;
 
         //Family A pays $15 per hour before 11pm, and $20 per hour the rest of the night
-        //This If handles if  startTime is before 11pm and the endTime is after 11pm
+        //This If handles if startTime is before 11pm and the endTime is after 11pm
         if (startTime < elevenPM && endTime >= elevenPM) {
             return (((elevenPM - startTime) * familyAHourlyRateAfterFivePM) + ((endTime - elevenPM) * familyAHourlyRateAfterElevenPM));
+
+            //This If handles if startTime is after 11pm and the endTime is after 11pm
         } else if (startTime >= elevenPM && endTime > elevenPM) {
             return ((endTime - startTime) * familyAHourlyRateAfterElevenPM);
-        } else if(startTime < elevenPM && endTime <= elevenPM){
+
+            //This If handles if startTime and endTime are before 11pm
+        } else if (startTime < elevenPM && endTime <= elevenPM) {
             return ((endTime - startTime) * familyAHourlyRateAfterFivePM);
         }
         return 0;
@@ -119,30 +123,43 @@ public class BabySitter {
 
         //if the startTime is prior to 10 and the endTime is set after 10
         if (startTime < tenPM && endTime >= tenPM) {
+
+            //In the situation that endTime is after midnight
             if (endTime > midnight) {
                 return (((tenPM - startTime) * familyBHourlyRateAfterFivePM) + (familyBHourlyRateAfterTenPM * (midnight - tenPM)) + ((endTime - midnight) * familyBHourlyRateAfterMidnight));
             }
             return (((tenPM - startTime) * familyBHourlyRateAfterFivePM) + ((midnight - endTime) * familyBHourlyRateAfterTenPM));
+
+            //This If handles if startTime and endTime are after 10pm
         } else if (startTime >= tenPM && endTime > tenPM) {
+
+            //In the situation that endTime is after midnight
             if (startTime < midnight && endTime < midnight) {
                 return (endTime - startTime) * familyBHourlyRateAfterTenPM;
-            } else if (startTime < midnight && endTime > midnight) {
-                return (((midnight - startTime) * familyBHourlyRateAfterTenPM) + ((endTime - midnight) * familyBHourlyRateAfterMidnight));
-            } else if (startTime >= midnight && endTime > midnight) {
-                return (endTime - startTime) * familyBHourlyRateAfterMidnight;
             }
+            return (((midnight - startTime) * familyBHourlyRateAfterTenPM) + ((endTime - midnight) * familyBHourlyRateAfterMidnight));
+
+            //if startTime and endTime are after midnight
+        } else if (startTime >= midnight && endTime > midnight) {
+            return (endTime - startTime) * familyBHourlyRateAfterMidnight;
         }
         return 0;
     }
 
     public int familyCCalculation(int startTime, int endTime) {
-        int familyBHourlyRateAfterFivePM = 21, familyBHourlyRateAfterNinePM = 15;
+        int familyCHourlyRateAfterFivePM = 21, familyCHourlyRateAfterNinePM = 15;
+
+        //if startTime is before 9pm and endtTime is after 9pm
         if (startTime < ninePM && endTime > ninePM) {
-            return (((ninePM - startTime) * familyBHourlyRateAfterFivePM) + ((endTime - ninePM) * familyBHourlyRateAfterNinePM));
+            return (((ninePM - startTime) * familyCHourlyRateAfterFivePM) + ((endTime - ninePM) * familyCHourlyRateAfterNinePM));
+
+            //if startTime and endTime are after 9pm
         } else if (startTime >= ninePM && endTime > ninePM) {
-            return ((endTime - startTime) * familyBHourlyRateAfterNinePM);
+            return ((endTime - startTime) * familyCHourlyRateAfterNinePM);
+
+            //if startTime and endTime are before 9pm
         } else if (startTime < ninePM && endTime <= ninePM) {
-            return ((endTime - startTime) * familyBHourlyRateAfterFivePM);
+            return ((endTime - startTime) * familyCHourlyRateAfterFivePM);
         }
         return 0;
     }
