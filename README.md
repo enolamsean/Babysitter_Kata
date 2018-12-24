@@ -30,4 +30,3 @@ The job:
 	2. Family B pays $12 per hour before 10pm, $8 between 10 and 12, and $16 the rest of the night
 	3. Family C pays $21 per hour before 9pm, then $15 the rest of the night
 - The solution will then return the total amount owed to the babysitter.
-# THIS-IS-A-SECOND-TEST
