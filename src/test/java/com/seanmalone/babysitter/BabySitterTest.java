@@ -72,63 +72,63 @@ public class BabySitterTest {
     }
 
     @Test
-    public void ifValidateFamilyReturnsFalseShouldRecieveErrorMessage() {
+    public void ifValidateFamilyReturnsFalseShouldReceiveErrorMessage() {
         assertEquals("Error", babySitterTestObject.setFamily("d"));
     }
 
     @Test
-    public void familyACalculationFivePMToTenPMShouldReturnSeventyFiveDollars() {
+    public void familyACalculation5PMTo10PMShouldReturn75() {
         assertEquals(75, babySitterTestObject.familyACalulation(17, 22));
     }
 
     @Test
-    public void familyACalculationStartTimeFivePMAndEndTimeMidnightShouldReturnOneHundredAndTen() {
+    public void familyACalculationStartTime5PMAndEndTime12AMShouldReturn110() {
         assertEquals(110, babySitterTestObject.familyACalulation(17, 24));
     }
 
     @Test
-    public void familyACalculationStartTimeElevenPMAndEndTimeTwoAMShouldReturnSixty() {
+    public void familyACalculationStartTime11PMAndEndTime2AMShouldReturn60() {
         assertEquals(60, babySitterTestObject.familyACalulation(23, 26));
     }
 
     @Test
 
-    public void familyBCalculationStartTimeFivePMAndEndTimeTwoAMShouldReturnOneHundredAndEight() {
+    public void familyBCalculationStartTime5PMAndEndTime2AMShouldReturn108() {
         assertEquals(108, babySitterTestObject.familyBCalculation(17, 26));
     }
 
     @Test
-    public void familyBCalculationStartTimeFivePMAndEndTimeElevenPMShouldReturnSixtyEight() {
+    public void familyBCalculationStartTime5PMAndEndTime11PMShouldReturn68() {
         assertEquals(68, babySitterTestObject.familyBCalculation(17, 23));
     }
 
     @Test
-    public void familyBCalculationStartTimeTenPMAndEndTimeElevenPMShouldReturnEight() {
+    public void familyBCalculationStartTime10PMAndEndTime11PMShouldReturn8() {
         assertEquals(8, babySitterTestObject.familyBCalculation(22, 23));
     }
 
     @Test
-    public void familyBCalculationStartTimeTenPMAndEndTimeThreeAMMShouldReturnSixtyFour() {
+    public void familyBCalculationStartTime10PMAndEndTime3AMShouldReturn64() {
         assertEquals(64, babySitterTestObject.familyBCalculation(22, 27));
     }
 
     @Test
-    public void familyBCalculationStartTimeMidnightAndEndTimeThreeAMMShouldReturnFortyEight() {
+    public void familyBCalculationStartTime12AMAndEndTime3AMShouldReturn48() {
         assertEquals(48, babySitterTestObject.familyBCalculation(24, 27));
     }
 
     @Test
-    public void familyCCalulationStartTimeFivePMEndTimeTwoAMShouldReturnOneHundredFiftyNine() {
+    public void familyCCalulationStartTime5PMEndTime2AMShouldReturn159() {
         assertEquals(159, babySitterTestObject.familyCCalculation(17, 26));
     }
 
     @Test
-    public void familyCCalulationStartTimeNinePMEndTimeThreeAMShouldReturnNinety() {
+    public void familyCCalulationStartTime9PMEndTime3AMShouldReturn90() {
         assertEquals(90, babySitterTestObject.familyCCalculation(21, 27));
     }
 
     @Test
-    public void familyCCalulationStartTimeFivePMEndTimeNinePMShouldReturnEightyFour() {
+    public void familyCCalulationStartTime5PMEndTime9PMShouldReturn84() {
         assertEquals(84, babySitterTestObject.familyCCalculation(17, 21));
     }
 

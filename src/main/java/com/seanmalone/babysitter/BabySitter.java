@@ -39,13 +39,13 @@ public class BabySitter {
             //Converting input String to Date format
             Date timeInDateFormat = time_to_date.parse(inputTime);
 
-            /*Converting Date format input into integer
-            The date format conversion consistently adds 5 additional hours to conversion,
-            errorCorrectionValue is deducted to correct this error.*/
+            //Converting Date format input into integer
+            //The date format conversion consistently adds 5 additional hours to conversion,
+            //errorCorrectionValue is deducted to correct this error.
             conversionStorageTime = (((((int) timeInDateFormat.getTime()) / milliseconds) / seconds) / minutes) - errorCorrectionValue;
 
-            /*if the time registers as after midnight it will be add to 24
-            to more easily calculate total hours worked*/
+            //if the time registers as after midnight it will be add to 24
+            //to more easily calculate total hours worked
             if (conversionStorageTime < fourAMBeforeConversion) {
                 conversionStorageTime += 24;
             }
@@ -56,8 +56,8 @@ public class BabySitter {
     }
 
     public int setStartTime(String scannerStartTime) throws ParseException {
-       /*  if the validateInputTime function returns true it will assign
-        the returned value to the endTime variable*/
+        //if the validateInputTime function returns true it will assign
+        //the returned value to the endTime variable
         if ((validateInputTime(convertInputTime(scannerStartTime)))) {
             startTime = convertInputTime(scannerStartTime);
         }
@@ -66,8 +66,8 @@ public class BabySitter {
 
     public int setEndTime(String scannerEndTime) throws ParseException {
 
-        /*if the validateInputTime function returns true it will assign
-        the returned value to the endTime variable*/
+        //if the validateInputTime function returns true it will assign
+        //the returned value to the endTime variable
         if ((validateInputTime(convertInputTime(scannerEndTime)))) {
             endTime = convertInputTime(scannerEndTime);
         }
@@ -100,8 +100,8 @@ public class BabySitter {
     public int familyACalulation(int startTime, int endTime) {
         int familyAHourlyRateAfterFivePM = 15, familyAHourlyRateAfterElevenPM = 20;
 
-        /*Family A pays $15 per hour before 11pm, and $20 per hour the rest of the night
-        This If handles if  startTime is before 11pm and the endTime is after 11pm */
+        //Family A pays $15 per hour before 11pm, and $20 per hour the rest of the night
+        //This If handles if  startTime is before 11pm and the endTime is after 11pm
         if (startTime < elevenPM && endTime >= elevenPM) {
             return (((elevenPM - startTime) * familyAHourlyRateAfterFivePM) + ((endTime - elevenPM) * familyAHourlyRateAfterElevenPM));
         } else if (startTime >= elevenPM && endTime > elevenPM) {
