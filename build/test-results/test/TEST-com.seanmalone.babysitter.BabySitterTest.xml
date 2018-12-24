@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.seanmalone.babysitter.BabySitterTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2018-12-23T23:26:05" hostname="seans-MBP.wowway.com" time="0.029">
+<testsuite name="com.seanmalone.babysitter.BabySitterTest" tests="24" skipped="0" failures="0" errors="0" timestamp="2018-12-24T04:29:55" hostname="seans-MacBook-Pro.local" time="0.042">
   <properties/>
-  <testcase name="validatingFamilyIfBShouldReturnTrue" classname="com.seanmalone.babysitter.BabySitterTest" time="0.001"/>
-  <testcase name="familyBCalculationStartTime5PMAndEndTime11PMShouldReturn68" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
+  <testcase name="validatingFamilyIfBShouldReturnTrue" classname="com.seanmalone.babysitter.BabySitterTest" time="0.002"/>
+  <testcase name="familyBCalculationStartTime5PMAndEndTime11PMShouldReturn68" classname="com.seanmalone.babysitter.BabySitterTest" time="0.001"/>
   <testcase name="familyBCalculationStartTime12AMAndEndTime3AMShouldReturn48" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
   <testcase name="familyACalculationStartTime5PMAndEndTime12AMShouldReturn110" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
   <testcase name="familyBCalculationStartTime5PMAndEndTime2AMShouldReturn108" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
-  <testcase name="settingStartTimeVariableandValidatingStringInput" classname="com.seanmalone.babysitter.BabySitterTest" time="0.019"/>
+  <testcase name="settingStartTimeVariableandValidatingStringInput" classname="com.seanmalone.babysitter.BabySitterTest" time="0.03"/>
   <testcase name="familyCCalulationStartTime5PMEndTime2AMShouldReturn159" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
-  <testcase name="errorHandlingProperTimeInputFormatAndConversion" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
+  <testcase name="errorHandlingProperTimeInputFormatAndConversion" classname="com.seanmalone.babysitter.BabySitterTest" time="0.001"/>
   <testcase name="convertAMEndTimeToTwentFourHourFormat" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
   <testcase name="validateInputStartTime" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
   <testcase name="validatingFamilyIfCShouldReturnTrue" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
   <testcase name="familyCCalulationStartTime9PMEndTime3AMShouldReturn90" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
   <testcase name="familyBCalculationStartTime10PMAndEndTime3AMShouldReturn64" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
   <testcase name="settingEndTimeVariableandValidatingStringInput" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
-  <testcase name="assigningFamilyVariableIsSetAfterValidation" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
-  <testcase name="ifEndTimeIsBeforeStartTimeShouldReturnFalse" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
+  <testcase name="assigningFamilyVariableIsSetAfterValidation" classname="com.seanmalone.babysitter.BabySitterTest" time="0.001"/>
+  <testcase name="ifEndTimeIsBeforeStartTimeShouldReturnFalse" classname="com.seanmalone.babysitter.BabySitterTest" time="0.001"/>
   <testcase name="familyCCalulationStartTime5PMEndTime9PMShouldReturn84" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
   <testcase name="validatingFamilyIfAShouldReturnTrue" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
-  <testcase name="validatingFamilyIfNotAorBorCShouldReturnFalse" classname="com.seanmalone.babysitter.BabySitterTest" time="0.001"/>
+  <testcase name="validatingFamilyIfNotAorBorCShouldReturnFalse" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
   <testcase name="ifValidateFamilyReturnsFalseShouldReceiveErrorMessage" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
   <testcase name="familyBCalculationStartTime10PMAndEndTime11PMShouldReturn8" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
   <testcase name="convertPMStartTimeToTwentyFourHourFormat" classname="com.seanmalone.babysitter.BabySitterTest" time="0.0"/>
